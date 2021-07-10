@@ -3,11 +3,9 @@ package com.example.glance.base
 import androidx.lifecycle.ViewModel
 import com.example.glance.BuildConfig
 import com.example.glance.retrofit.ApiInterface
-import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
 
 open class BaseViewModel : ViewModel() {
 
