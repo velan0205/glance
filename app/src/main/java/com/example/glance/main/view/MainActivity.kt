@@ -51,6 +51,10 @@ class MainActivity : AppCompatActivity() {
             postsAdapter.setData(it)
         })
 
+        viewModel.liveDataUsers.observe(this, {
+            binding.tvCount.text = "Count $it"
+        })
+
 
     }
 

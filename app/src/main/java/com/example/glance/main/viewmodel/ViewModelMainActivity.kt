@@ -8,13 +8,15 @@ import com.example.glance.main.model.Users
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import javax.inject.Inject
+
 
 @HiltViewModel
 class ViewModelMainActivity @Inject constructor() : BaseViewModel() {
 
     val liveDataPosts: MutableLiveData<List<Posts>> = MutableLiveData()
-    val liveDataUsers: MutableLiveData<List<Users>> = MutableLiveData()
+    val liveDataUsers: MutableLiveData<Int> = MutableLiveData()
 
     val liveError: MutableLiveData<String> = MutableLiveData()
     val progress = MutableLiveData(true)
@@ -36,7 +38,8 @@ class ViewModelMainActivity @Inject constructor() : BaseViewModel() {
         }
         if (usersResponse.isSuccessful && usersResponse.body() != null) {
             val result = usersResponse.body()
-            liveDataUsers.postValue(result)
+            val count = result.toString().length
+            liveDataUsers.postValue(count)
         } else {
             val message: String = if (usersResponse.errorBody() != null) {
                 usersResponse.errorBody().toString()

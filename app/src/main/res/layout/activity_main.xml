@@ -13,27 +13,29 @@
         android:layout_marginTop="10dp"
         android:onClick="onStart"
         android:text="@string/start"
-        app:layout_constraintRight_toLeftOf="@id/tvCount"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvCount"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvCount"
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint="count"
-        app:layout_constraintRight_toLeftOf="@id/tvTimeTaken"
+        android:textColor="@color/black"
         app:layout_constraintLeft_toRightOf="@id/startButton"
+        app:layout_constraintRight_toLeftOf="@id/tvTimeTaken"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvTimeTaken"
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint="TimeTaken"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tvCount"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
